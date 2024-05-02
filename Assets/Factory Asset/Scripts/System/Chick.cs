@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Chick : Animal
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected override float defaultSpeed { get { return 5.0f; } }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected override float defaultJumpHeight { get { return 0.5f; } }
 }
+
