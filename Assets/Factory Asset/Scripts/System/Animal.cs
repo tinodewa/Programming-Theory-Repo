@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-//PARENT
+//INHERITANCE
 [RequireComponent(typeof(CharacterController))]
 public abstract class Animal : MonoBehaviour
 {
