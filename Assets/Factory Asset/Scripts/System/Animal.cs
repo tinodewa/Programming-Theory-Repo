@@ -27,6 +27,7 @@ public abstract class Animal : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        CheckActiveAnimal();
     }
 
     void Update()
@@ -67,4 +68,6 @@ public abstract class Animal : MonoBehaviour
             gameObject.transform.forward = move;
         }
     }
+
+    protected abstract void CheckActiveAnimal();
 }
