@@ -15,20 +15,20 @@ public class MenuUIHandler : MonoBehaviour
 
     private void Start()
     {
-        MainManager.Instance.selectedAnimal = dropdown.value;
+        MainManager.Instance.selectedAnimal = dropdown.value;// ENCAPSULATION
     }
 
     public void DropDownValueChanged()
     {
-        MainManager.Instance.selectedAnimal = dropdown.value;
+        MainManager.Instance.selectedAnimal = dropdown.value;// ENCAPSULATION
     }
 
-    public void StartNew()
+    public void StartNew()// ABSTRACTION
     {
         SceneManager.LoadScene(1);
     }
 
-    public void Exit()
+    public void Exit()// ABSTRACTION
     {
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();

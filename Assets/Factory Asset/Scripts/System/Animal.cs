@@ -5,13 +5,14 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+//PARENT
 [RequireComponent(typeof(CharacterController))]
 public abstract class Animal : MonoBehaviour
 {
-    public float m_Speed { get; set; }
-    protected abstract float defaultSpeed { get; }
-    public float m_JumpHeight { get; set; }
-    protected abstract float defaultJumpHeight { get; }
+    public float m_Speed { get; set; }// ENCAPSULATION
+    protected abstract float defaultSpeed { get; }// POLYMORPHISM// ENCAPSULATION
+    public float m_JumpHeight { get; set; }// ENCAPSULATION
+    protected abstract float defaultJumpHeight { get; }// POLYMORPHISM// ENCAPSULATION
 
     private float gravityValue = -9.81f;
     CharacterController controller;
@@ -37,7 +38,7 @@ public abstract class Animal : MonoBehaviour
         Jump();
     }
 
-    private void CheckGrounded()
+    private void CheckGrounded()// ABSTRACTION
     {
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -46,7 +47,7 @@ public abstract class Animal : MonoBehaviour
         }
     }
 
-    private void Jump()
+    private void Jump()// ABSTRACTION
     {
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && groundedPlayer)
@@ -58,7 +59,7 @@ public abstract class Animal : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
-    private void Move()
+    private void Move()// ABSTRACTION
     {
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         controller.Move(move * Time.deltaTime * m_Speed);
@@ -69,5 +70,6 @@ public abstract class Animal : MonoBehaviour
         }
     }
 
+    // POLYMORPHISM
     protected abstract void CheckActiveAnimal();
 }
